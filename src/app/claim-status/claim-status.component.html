@@ -1,0 +1,15 @@
+<form #form="ngForm" autocomplete="off">
+    <div class="row">
+    <div class="col form-group mb-4">
+      <label for="ClaimId" class="form-label">Claim Id</label>
+      <input name="ClaimId" type="text" class="form-control text-black" id="ClaimId" #ClaimId="ngModel" [(ngModel)]="obj.claimData.ClaimId"
+      required/>
+    </div>
+    <div class="row">
+        <div class="col form-group mb-4">
+            <button type="submit" (click)="checkStatus(obj.claimData.ClaimId)"> Check Status </button>
+        </div>
+    </div>
+    
+    </div>
+</form>

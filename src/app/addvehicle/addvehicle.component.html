@@ -1,0 +1,138 @@
+
+<section class="vh-200" style="background-color: #eee;">
+    <div class="container ">
+    <div class="row d-flex justify-content-center align-items-center h-400">
+    <div class="col-lg-12 col-xl-11">
+    <div class="card text-black" style="border-radius: 25px;">
+    <div class="card-body p-md-5">
+    <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    
+    
+    
+     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Vehicle Details</p>
+    
+    
+    
+     <form #form="ngForm"  autocomplete="off" class="mx-1 mx-md-4">
+      <input type="hidden" name="VehicleId" [value]="obj.vehicleData.VehicleId">
+      <div class="form group ">
+    
+     <div class="d-flex flex-row align-items-center mb-4">
+   
+    <div class="form-outline flex-fill mb-0">
+    <input type="text" name="VehicleName"  #VehicleName="ngModel" [(ngModel)]="obj.vehicleData.VehicleName" placeholder="Vehicle  Name" minlength="3" maxlength="25" required class="form-control" />
+
+    </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+   
+      <div class="form-outline flex-fill mb-0">
+      <input type="text" name="VehicleModel" #VehicleModel="ngModel" [(ngModel)]="obj.vehicleData.VehicleModel" placeholder=" Vehicle Model" minlength="2" maxlength="25" required class="form-control" />
+ 
+      </div>
+      </div>
+
+
+    
+      <div class="d-flex flex-row align-items-center mb-4">
+       
+        <div class="form-outline flex-fill mb-0">
+        <input type="text" name="VehicleNo"#VehicleNo="ngModel" [(ngModel)]="obj.vehicleData.VehicleNo" placeholder=" Vehicle No" minlength="3" maxlength="25" required class="form-control" />
+        
+        </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+         
+          <div class="form-outline flex-fill mb-0">
+          <input type="text" name="VehiclePrice" #VehiclePrice="ngModel" [(ngModel)]="obj.vehicleData.VehiclePrice" placeholder=" Vehicle Price" minlength="3" maxlength="25" required class="form-control" />
+        
+          </div>
+          </div>
+      
+
+
+            <div class="form-group">
+
+                <div class="input-group">
+                
+                <div class="input-group-prepend">
+                
+                <div class="input-group-text bg-white">
+                
+                <i  aria-hidden="true" [class.green-icon]="VehiclePurchasedDate.valid"
+                
+                [class.red-icon]="VehiclePurchasedDate.invalid && VehiclePurchasedDate.touched"></i>
+                
+                <input type="date" name="VehiclePurchasedDate" #VehiclePurchasedDate="ngModel" [(ngModel)]="obj.vehicleData.VehiclePurchasedDate" placeholder="mm-dd-yyyy"
+                
+                class="form-control" required >
+                
+                </div></div> </div> </div>
+
+
+     <div class="d-flex flex-row align-items-center mb-4">
+        <!-- <div class="col-lg-11 col-xl-16"> -->
+    <div class="form-outline flex-fill mb-0">
+    <input type="email" name="CustomerId" #CustomerId="ngModel" [(ngModel)]="obj.vehicleData.CustomerId" placeholder=" Customer Id" minlength="3" maxlength="25" required class="form-control" />
+   
+    </div>
+    </div>
+    
+
+    
+    
+    
+     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+    <button type="button" class="btn btn-primary btn-lg" (click)="onSubmit(form)">submit</button>
+    </div>
+    
+
+    <!-- <section class="vh-200  "  style="background-color: #eee;"> -->
+    <div class="container ">
+        <div class="row g-0">
+          <div class="row g-0">
+            <div class="col text-center p-2 mb-3 rounded-3 text-black" style="background-color:#a1bbca">
+              <span class="fs-5" >Vehicle Details</span>
+            </div>
+          </div>
+          <div class="col">
+            <table class="table table-hover text-white">
+              <thead class="thead text-info" style="font-weight: 1">
+                <tr>
+                  <th>VehicleId</th>
+                  <th> VehicleName</th>
+                  <th>VehicleModel
+                </th>
+                  <th>VehicleNo</th>
+                  <th>VehiclePrice</th>
+                  <th>VehiclePurchasedDate</th>
+                  <th>CustomerId</th>
+
+                </tr>
+              </thead>
+              <tbody class="thead text-black" style="font-weight: 1">
+                <tr *ngFor="let p of obj.vehicleList">
+                  <td (click)="fillform(p)">{{ p.VehicleId }}</td> 
+                  <td (click)="fillform(p)">{{ p.VehicleName}}</td>
+                  <td (click)="fillform(p)">{{ p.VehicleModel}}</td>
+                  <td (click)="fillform(p)">{{ p.VehicleNo}}</td>
+                  <td (click)="fillform(p)">{{ p.VehiclePrice}}</td>
+                  <td (click)="fillform(p)">{{ p.VehiclePurchasedDate}}</td>
+                  <td (click)="fillform(p)">{{ p.CustomerId}}</td>
+                 
+                  <!-- <td >
+                    <button type="button" class="btn btn-danger rounded-5" (click)="del(p.PolicyId)">Reject <i class="fa fa-trash"></i>
+                    </button>
+                        <button type="submit" class="fa fa-user-circle-o green-icon" ><a (click)="accept()">Accept</a> </button>
+                     
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    <!-- </div>
+    </section>   -->

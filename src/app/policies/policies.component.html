@@ -1,0 +1,45 @@
+<app-register-policy></app-register-policy>
+<div class="container">
+    <div class="row g-0">
+      <div class="row g-0">
+        <div class="col text-center p-2 mb-3 rounded-3 text-black" style="background-color:#af9057">
+          <span class="fs-3">POLICIES</span>
+        </div>
+      </div>
+      <div class="col">
+        <table class="table table-hover text-white">
+          <thead class="thead text-info" style="font-weight: 1">
+            <tr>
+              <th>PolicyId</th>
+              <th>InsurenceAmount</th>
+              <th>PolicyType</th>
+              <th>VehicleType</th>
+              <th>PolicyStartDate</th>
+              <th>PolicyExpiryDate</th>
+              <th>VehicleId</th>
+              <th>ComapanyIdentificationNo</th>
+            </tr>
+          </thead>
+          <tbody class="thead text-black" style="font-weight: 1">
+            <tr *ngFor="let p of obj.policyList">
+              <td (click)="fillform(p)">{{ p.PolicyId }}</td> 
+              <td (click)="fillform(p)">{{ p.InsurenceAmount}}</td>
+              <td (click)="fillform(p)">{{ p.PolicyType}}</td>
+              <td (click)="fillform(p)">{{ p.VehicleType}}</td>
+              <td (click)="fillform(p)">{{ p.PolicyStartDate}}</td>
+              <td (click)="fillform(p)">{{ p.PolicyExpiryDate}}</td>
+              <td (click)="fillform(p)">{{ p.VehicleId}}</td>
+              <td (click)="fillform(p)">{{ p.ComapanyIdentificationNo}}</td>
+              <td >
+                <button type="button" class="btn btn-danger rounded-5" (click)="del(p.PolicyId)"> <i class="fa fa-trash"></i>
+                </button>
+                    <button type="submit" class="fa fa-user-circle-o red-icon" ><a (click)="fillform(p)">Edit</a> </button>
+                 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <a routerLink="update">Edit</a>-->

@@ -1,0 +1,33 @@
+/* .form {
+  width: 300px;
+  transform: scale(1.2);
+  background: transparent;
+}
+
+input {
+  color: black;
+  background-color: bisque;
+}
+
+ 
+.form-control {
+  background: #fe5e54;
+  background-color: transparent;
+  color: transparent;
+}
+::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+button {
+  padding-top: 0%;
+  padding-bottom: 5%;
+} */
